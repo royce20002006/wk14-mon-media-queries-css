@@ -61,7 +61,7 @@ header {
     filter: drop-shadow(4px 4px 4px black);
 }
 
-.image-box img {
+.image-box img, .printFeather img{
     border: solid #6C547B 4px;
     border-radius: 0 45px;
     filter: drop-shadow(4px 4px 4px black);
@@ -108,42 +108,60 @@ header {
 /* ===== PRINTING ===== */
 
 /* Phase 2 */
-
+.printFeather {
+    visibility: hidden;
+    width: 0%;
+    
+}
 @media print {
-
-    .page {
+    .printBox {
+        display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: space-evenly;
+    }
+    
+    .printFeather {
+        border: solid #6C547B 4px;
+        border-radius: 0 45px;
+        filter: drop-shadow(4px 4px 4px black);
+        visibility: visible;
+        width: 15%;
+        height: 10%;
         
     }
+
+
+    /* .page {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+    } */
     header {
-        visibility: hidden;
+        /* visibility: hidden; */
+        display: none;
+        width: 0px;
     }
 
     .sidebar {
-        visibility: hidden;
+        /* visibility: hidden; */
+        display: none;
+        width: 0px;
     }
 
-    .image-box{
-        visibility: hidden;
-    }
 
     .story-box {
         background-color: white;
         border: none;
         filter: none;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin: 0;
-        padding: 0;
+       
      
     }
 
     .image-box {
-        visibility: visible;
-        width: 50%;
+        visibility: hidden;
     }
 
     
@@ -151,6 +169,6 @@ header {
 
     body {
         background-color: white;
-
+        
     }
 }
